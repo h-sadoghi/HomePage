@@ -1,6 +1,19 @@
 
 # Introduction to Pattern Recognition
 ### Author : [Hadi Sadoghi Yazdi](https://scholar.google.com/citations?user=Z3XAKb0AAAAJ&hl=en)
+
+$$
+\begin{split}
+var[X] &= \int p(x) \bigg[ f(x) - \mathbb{E}[f(x)] \bigg]^2 dx \\
+&= \int p(x) \bigg[  f(x)^2 -2 \mathbb{E}[f(x)] f(x) + \mathbb{E}[f(x)]^2 \bigg]dx\\
+&= \int (p(x)f(x)^2 - 2p(x)\mathbb{E}[f(x)] f(x) + p(x)\mathbb{E}[f(x)]^2) dx\\
+&= \int p(x)f(x)^2 dx - 2\int p(x)\mathbb{E}[f(x)]f(x)dx + \int p(x)\mathbb{E}[f(x)]^2 dx\\
+&= \mathbb{E}[f(x)^2] - 2\mathbb{E}[f(x)] \int p(x)f(x)dx + \mathbb{E}[f(x)]^2 \int p(x)dx \\
+&= \mathbb{E}[f(x)^2] - 2\mathbb{E}[f(x)]^2 + \mathbb{E}[f(x)]^2 \\
+&= \mathbb{E}[f(x)^2] - \mathbb{E}[f(x)]^2
+\end{split}
+$$
+
 <p style="text-align: center;">
     <img src="cheetah.jpg" width="300" height="200">
 </p>
@@ -30,6 +43,11 @@ The book "Pattern Recognition" covers four main topics: clustering, classificati
         y = df.iloc[:, 4].values
         plt.plot(x,y,'.r')
 ```
+Also activity recognition from other view can be see in this my paper. 
+Activity Recognition In Smart Home Using Weighted Dempster-Shafer Theory
+Hadi Sadoghi Yazdi and et.al. - Int. J. Smart Home, 2013
+
+
 Data shared by individuals on social platforms like Flickr, 500px, Telegram, WhatsApp, Instagram, etc., can be valuable for analysis and decision-making in providing solutions for a better life. Nowadays, processing such data requires learning systems that are trainable. This book covers the necessary topics for such systems, typically focusing on fundamental principles and mathematics needed in pattern recognition learning discussions. The learning process involves issues such as data type, data application to the learning system, learning model, learning cost function, and system generalizability, which will be gradually introduced in the pattern recognition course over time. In this course, the focus is mainly on the following sections:
  
 1. **Dataset** (Captured from sensors)
@@ -215,3 +233,30 @@ tfidf_dense = tfidf_matrix.todense()
 print("\nFeature Names:\n", feature_names)
 ```
 #### Feature Extraction from Image: 
+**_Feature extraction_** from images involves transforming raw image data into a set of representative features that can be used for analysis or machine learning tasks. Here's an overview of the process:
+
+1. **Preprocessing**
+Before extracting features, it's often necessary to preprocess the images to standardize them and remove noise. Common preprocessing steps include resizing, cropping, normalization, and noise reduction.
+
+2. **Feature Extraction Techniques**
+There are various techniques for extracting features from images. Some popular methods include:
+
+a. _Histogram of Oriented Gradients ([HOG](https://en.wikipedia.org/wiki/Histogram_of_oriented_gradients))_
+HOG computes the distribution of gradient orientations in localized portions of an image. It's commonly used for object detection and recognition tasks.
+
+b. _Scale-Invariant Feature Transform ([SIFT](https://en.wikipedia.org/wiki/Scale-invariant_feature_transform))_
+SIFT detects and describes local features in an image that are invariant to scale, rotation, and illumination changes. It's widely used in image matching and object recognition.
+
+c. Convolutional Neural Networks ([CNNs](https://en.wikipedia.org/wiki/Convolutional_neural_network))
+CNNs are deep learning models that automatically learn hierarchical features from images. They consist of convolutional layers that extract features at different levels of abstraction.
+
+3. Feature Representation
+Once features are extracted, they need to be represented in a suitable format for analysis or machine learning algorithms. This could involve reshaping them into vectors or matrices.
+
+4. Application
+Extracted features can be used for various tasks such as image classification, object detection, image retrieval, and content-based image retrieval.
+
+Python Libraries for Image Feature Extraction
+Popular Python libraries for image feature extraction include OpenCV, scikit-image, and TensorFlow.
+
+Here's a simple example using scikit-image to extract HOG features from an image:
