@@ -82,35 +82,36 @@ The TF-IDF value increases with the number of times a term appears in a document
 TF-IDF stands for Term Frequency-Inverse Document Frequency. It is a numerical statistic intended to reflect how important a word is to a document in a collection or corpus.
 
 ##### Term Frequency (TF)
-The term frequency \( \text{TF}(t,d) \) is the frequency of term \( t \) in document \( d \).
+The term frequency TF(t,d) is the frequency of term t  in document  d.
 
 
-<!-- $$\[
+<!-- <!-- <!-- <!-- $$\[
 \text{TF}(t,d) = \frac{\text{Number of times term } t \text{ appears in document } d}{\text{Total number of terms in document } d}
 \]$$ --> 
 
-<div align="center"><img style="background: white;" src="..\..\..\..\..\Users\Dr\AppData\Local\Programs\Microsoft VS Code\svg\dMXrkG3hO4.svg"></div>
- 
-
+<div align="center"><img style="background: white;" src="dMXrkG3hO4.svg"></div>  
 
 
 #### Inverse Document Frequency (IDF)
-The inverse document frequency \( \text{IDF}(t,D) \) measures how important a term is across the entire corpus \( D \).
+The inverse document frequency IDF(t,D)  measures how important a term is across the entire corpus D .
 
-\[
+<!-- $$\[
 \text{IDF}(t,D) = \log \left( \frac{N}{|\{d \in D : t \in d\}|} \right)
-\]
+\]$$ --> 
+
+<div align="center"><img style="background: white;" src="Rh4ylSBoCs.svg"></div>
 
 Where:
-- \( N \) is the total number of documents in the corpus.
-- \( |\{d \in D : t \in d\}| \) is the number of documents where the term \( t \) appears (i.e., the document frequency of the term).
+-  N is the total number of documents in the corpus. Denumerator is the number of documents where the term  t appears (i.e., the document frequency of the term).
 
 #### TF-IDF Score
-The TF-IDF score for a term \( t \) in a document \( d \) is the product of its TF and IDF values.
+The TF-IDF score for a term  t  in a document d is the product of its TF and IDF values.
 
-\[
+<!-- $$\[
 \text{TF-IDF}(t,d,D) = \text{TF}(t,d) \times \text{IDF}(t,D)
-\]
+\]$$ --> 
+
+<div align="center"><img style="background: white;" src="naE5cCrJaN.svg"></div>
 
 This formula adjusts the term frequency of a word by how rarely it appears in the entire corpus, emphasizing words that are more unique to specific documents.
 
