@@ -84,9 +84,15 @@ TF-IDF stands for Term Frequency-Inverse Document Frequency. It is a numerical s
 ##### Term Frequency (TF)
 The term frequency \( \text{TF}(t,d) \) is the frequency of term \( t \) in document \( d \).
 
-\[
+
+<!-- $$\[
 \text{TF}(t,d) = \frac{\text{Number of times term } t \text{ appears in document } d}{\text{Total number of terms in document } d}
-\]
+\]$$ --> 
+
+<div align="center"><img style="background: white;" src="..\..\..\..\..\Users\Dr\AppData\Local\Programs\Microsoft VS Code\svg\dMXrkG3hO4.svg"></div>
+ 
+
+
 
 #### Inverse Document Frequency (IDF)
 The inverse document frequency \( \text{IDF}(t,D) \) measures how important a term is across the entire corpus \( D \).
