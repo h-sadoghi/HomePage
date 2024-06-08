@@ -2,17 +2,6 @@
 # Introduction to Pattern Recognition
 ### Author : [Hadi Sadoghi Yazdi](https://scholar.google.com/citations?user=Z3XAKb0AAAAJ&hl=en)
 
-$$
-\begin{split}
-var[X] &= \int p(x) \bigg[ f(x) - \mathbb{E}[f(x)] \bigg]^2 dx \\
-&= \int p(x) \bigg[  f(x)^2 -2 \mathbb{E}[f(x)] f(x) + \mathbb{E}[f(x)]^2 \bigg]dx\\
-&= \int (p(x)f(x)^2 - 2p(x)\mathbb{E}[f(x)] f(x) + p(x)\mathbb{E}[f(x)]^2) dx\\
-&= \int p(x)f(x)^2 dx - 2\int p(x)\mathbb{E}[f(x)]f(x)dx + \int p(x)\mathbb{E}[f(x)]^2 dx\\
-&= \mathbb{E}[f(x)^2] - 2\mathbb{E}[f(x)] \int p(x)f(x)dx + \mathbb{E}[f(x)]^2 \int p(x)dx \\
-&= \mathbb{E}[f(x)^2] - 2\mathbb{E}[f(x)]^2 + \mathbb{E}[f(x)]^2 \\
-&= \mathbb{E}[f(x)^2] - \mathbb{E}[f(x)]^2
-\end{split}
-$$
 
 <p style="text-align: center;">
     <img src="cheetah.jpg" width="300" height="200">
@@ -49,7 +38,7 @@ Hadi Sadoghi Yazdi and et.al. - Int. J. Smart Home, 2013
 
 
 Data shared by individuals on social platforms like Flickr, 500px, Telegram, WhatsApp, Instagram, etc., can be valuable for analysis and decision-making in providing solutions for a better life. Nowadays, processing such data requires learning systems that are trainable. This book covers the necessary topics for such systems, typically focusing on fundamental principles and mathematics needed in pattern recognition learning discussions. The learning process involves issues such as data type, data application to the learning system, learning model, learning cost function, and system generalizability, which will be gradually introduced in the pattern recognition course over time. In this course, the focus is mainly on the following sections:
- 
+
 1. **Dataset** (Captured from sensors)
 2. **Model** (Linear or non-linear)
 3. **error+loss function+Cost function**
@@ -102,10 +91,9 @@ TF-IDF stands for Term Frequency-Inverse Document Frequency. It is a numerical s
 ##### Term Frequency (TF)
 The term frequency TF(t,d) is the frequency of term t  in document  d.
 
-
-<!-- <!-- <!-- <!-- $$\[
-\text{TF}(t,d) = \frac{\text{Number of times term } t \text{ appears in document } d}{\text{Total number of terms in document } d}
-\]$$ --> 
+$$
+\text{TF}(t,d) = \frac{\text{Number of times term } t \text{ appears in document } d}{\text{Total number of terms in document } d}\
+$$
 
 <div align="center"><img style="background: white;" src="dMXrkG3hO4.svg"></div>  
 
@@ -113,9 +101,9 @@ The term frequency TF(t,d) is the frequency of term t  in document  d.
 #### Inverse Document Frequency (IDF)
 The inverse document frequency IDF(t,D)  measures how important a term is across the entire corpus D .
 
-<!-- $$\[
+$$
 \text{IDF}(t,D) = \log \left( \frac{N}{|\{d \in D : t \in d\}|} \right)
-\]$$ --> 
+$$
 
 <div align="center"><img style="background: white;" src="Rh4ylSBoCs.svg"></div>
 
