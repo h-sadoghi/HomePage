@@ -150,6 +150,8 @@ To address the issue of different forms of words (like conjunctions, verbs in va
 
 Here’s a Python code example using nltk and sklearn to perform these preprocessing steps before applying TF-IDF:
 
+
+
 ```python
 from sklearn.feature_extraction.text import TfidfVectorizer
 import nltk
@@ -211,30 +213,106 @@ tfidf_dense = tfidf_matrix.todense()
 print("\nFeature Names:\n", feature_names)
 ```
 #### Feature Extraction from Image: 
-**_Feature extraction_** from images involves transforming raw image data into a set of representative features that can be used for analysis or machine learning tasks. Here's an overview of the process:
+**_Feature extraction_** from images involves transforming raw image data into a set of representative features that can be used for analysis or machine learning tasks. Some of its stages include:
 
 1. **Preprocessing**
-Before extracting features, it's often necessary to preprocess the images to standardize them and remove noise. Common preprocessing steps include resizing, cropping, normalization, and noise reduction.
+    Before extracting features, it's often necessary to preprocess the images to standardize them and remove noise. Common preprocessing steps include resizing, cropping, normalization, and noise reduction.
 
 2. **Feature Extraction Techniques**
-There are various techniques for extracting features from images. Some popular methods include:
+    There are various techniques for extracting features from images. Some popular methods include:
 
-a. _Histogram of Oriented Gradients ([HOG](https://en.wikipedia.org/wiki/Histogram_of_oriented_gradients))_
-HOG computes the distribution of gradient orientations in localized portions of an image. It's commonly used for object detection and recognition tasks.
+  -  _Histogram of Oriented Gradients ([HOG](https://en.wikipedia.org/wiki/Histogram_of_oriented_gradients))_
+    HOG computes the distribution of gradient orientations in localized portions of an image. It's commonly used for object detection and recognition tasks.
 
-b. _Scale-Invariant Feature Transform ([SIFT](https://en.wikipedia.org/wiki/Scale-invariant_feature_transform))_
-SIFT detects and describes local features in an image that are invariant to scale, rotation, and illumination changes. It's widely used in image matching and object recognition.
+  -  _Scale-Invariant Feature Transform ([SIFT](https://en.wikipedia.org/wiki/Scale-invariant_feature_transform))_
+    SIFT detects and describes local features in an image that are invariant to scale, rotation, and illumination changes. It's widely used in image matching and object recognition.
+  - Convolutional Neural Networks ([CNNs](https://en.wikipedia.org/wiki/Convolutional_neural_network))
+    CNNs are deep learning models that automatically learn hierarchical features from images. They consist of convolutional layers that extract features at different levels of abstraction.
 
-c. Convolutional Neural Networks ([CNNs](https://en.wikipedia.org/wiki/Convolutional_neural_network))
-CNNs are deep learning models that automatically learn hierarchical features from images. They consist of convolutional layers that extract features at different levels of abstraction.
+3. **Feature Representation**
+    Once features are extracted, they need to be represented in a suitable format for analysis or machine learning algorithms. This could involve reshaping them into vectors or matrices.
 
-3. Feature Representation
-Once features are extracted, they need to be represented in a suitable format for analysis or machine learning algorithms. This could involve reshaping them into vectors or matrices.
+4. **Application**
+    Extracted features can be used for various tasks such as image classification, object detection, image retrieval, and content-based image retrieval.
 
-4. Application
-Extracted features can be used for various tasks such as image classification, object detection, image retrieval, and content-based image retrieval.
-
-Python Libraries for Image Feature Extraction
-Popular Python libraries for image feature extraction include OpenCV, scikit-image, and TensorFlow.
+**Python Libraries for Image Feature Extraction**
+Popular Python *libraries for image feature extraction* include `OpenCV, scikit-image, and TensorFlow`.
 
 Here's a simple example using scikit-image to extract HOG features from an image:
+
+```python
+from skimage.feature import hog
+
+from skimage import io, color
+
+import matplotlib.pyplot as plt
+
+# Load an example image
+
+image = io.imread('Cheetah.jpg')
+
+# Convert the image to grayscale
+
+image_gray = color.rgb2gray(image)
+
+# Extract HOG features
+
+features, hog_image = hog(image_gray, visualize=True)
+
+# Display the original image and HOG features
+
+fig, axes = plt.subplots(1, 2, figsize=(12, 6), sharex=True, sharey=True)
+
+ax = axes.ravel()
+
+ax[0].imshow(image, cmap=plt.cm.gray)
+
+ax[0].set_title('Original Image')
+
+ax[1].imshow(hog_image, cmap=plt.cm.gray)
+
+ax[1].set_title('HOG Features')
+
+plt.show()
+```
+
+![HOG Feature](D:\Sadoghi\HomePage\Course\PatternRecognition\Introduction\IntroductionImages\HOG_Image.JPG)
+
+This code loads an example image, converts it to grayscale, and extracts HOG features. It then displays the original image alongside the HOG features
+
+Another feature from image is histogram. The normalized histogram provides a probability distribution of pixel intensities in the grayscale image, highlighting the frequency of each intensity value across the entire image. following figure is Histogram of above cheetah.jpg
+
+Another feature extracted from the image is the ***histogram***. The normalized histogram provides a probability distribution of pixel intensities in the grayscale image, illustrating how frequently each intensity value occurs throughout the image. The x-axis represents the pixel intensity values, ranging from 0 (black) to 1 (white), while the y-axis shows the normalized frequency of each intensity value. To obtain a histogram of the image, the following code can be added:.
+
+```python
+import numpy as np
+hist, bins = np.histogram(image_gray, bins=256, range=(0, 1))
+
+# Normalize the histogram
+hist_normalized = hist / hist.sum()
+​```
+```
+
+The following figure shows the normalized histogram for the image 'cheetah.jpg'.
+
+![Histogram of Image](D:\Sadoghi\HomePage\Course\PatternRecognition\Introduction\IntroductionImages\Histogram_Feature.JPG)
+
+Interpreting the histogram can provide insights into the image's composition. Peaks in the histogram correspond to intensity values that occur frequently. In an image with a distinct target (like the cheetah) and background, the histogram might show two or more peaks. One peak could represent the intensity values of the target (cheetah), while another could represent the background (e.g., grass, sky). By analyzing these peaks, we can distinguish between different regions of the image. 
+
+We can add code to detect **corners** in an image using the Harris Corner Detection method from the OpenCV library. This feature extraction technique identifies points in the image where the intensity changes significantly in multiple directions, which typically corresponds to corners. Main change of code:
+
+```python 
+import cv2
+# Detect corners using Harris Corner Detection
+image_gray_cv2 = (image_gray * 255).astype(np.uint8)  # Convert to uint8 for OpenCV
+corners = cv2.cornerHarris(image_gray_cv2, blockSize=2, ksize=3, k=0.04)
+corners_dilated = cv2.dilate(corners, None)  # Dilate to mark the corners
+image_with_corners = np.copy(image)
+image_with_corners[corners_dilated > 0.01 * corners_dilated.max()] = [255, 0, 0]  # Mark corners in red
+​```
+
+```
+
+Output is:
+
+![Corner](D:\Sadoghi\HomePage\Course\PatternRecognition\Introduction\IntroductionImages\CornerFaeture.JPG)
