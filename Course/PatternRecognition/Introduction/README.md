@@ -2,21 +2,19 @@
 # Introduction to Pattern Recognition
 ### Author : [Hadi Sadoghi Yazdi](https://scholar.google.com/citations?user=Z3XAKb0AAAAJ&hl=en)
 
+![Dedicated to those who have devoted themselves to guiding humanitye](D:\Sadoghi\HomePage\Course\PatternRecognition\Introduction\IntroductionImages\Cheetah.jpg)
 
-<p style="text-align: center;">
-    <img src="cheetah.jpg" width="300" height="200">
-</p>
-<p style="text-align: center;">Dedicated to those who have devoted themselves to guiding humanitye</p>
+Dedicated to those who have devoted themselves to guiding humanity
 
-## Preface
+# Preface
+
 The book "Pattern Recognition" covers four main topics: clustering, classification, feature reduction, and classifier fusion, emphasizing their cost functions. It integrates both theoretical and practical aspects, offering ready-to-use codes for students and researchers. The book's unique approach categorizes methods based on cost functions, providing a comprehensive review of techniques from past to present. It includes detailed explanations and practical coding support, making it a valuable resource for understanding and applying pattern recognition concepts.
 ### Lesson 1: Introduction and Overview
  Nowadays, every individual is accompanied by a set of sensors that continuously collect various types of data. Additionally, people themselves contribute to the data pool by uploading photos, videos, and text. Smart watches and mobile phones, which many people carry, are equipped with an array of sensors including gyroscopes, accelerometers, three-axis magnetometers (x, y, z), and force sensors, which are common in most smart watches. The diagram below, along with an image of a smartwatch, illustrates the sensors and their structure within the watch. Some smartwatches even provide sensors for electrocardiogram and blood oxygen levels.
 
-<p style="text-align: center;">
-    <img src="SmartWatch.JPG" width="300" height="200">
-</p>
-<p style="text-align: center;">The internal structure of the smart watch</p>
+![The internal structure of the smart watch](D:\Sadoghi\HomePage\Course\PatternRecognition\Introduction\IntroductionImages\SmartWatch.JPG)
+
+The internal structure of the smart watch
 
  **_Code for daily step count data from a smart watch will be included here._**
 
@@ -57,20 +55,21 @@ Sensor datasets, recorded by various sensors detecting environmental changes, ar
 *Chemical Sensors*: Monitor environmental changes.
 *GPS Sensors*: Provide location data.
 **_Data is not only collected from temperature sensors, but also from other types of sensors that gather information such as text, video, audio, and various environmental parameters._**
-<p style="text-align: center;">
-    <img src="TextVideoImageSpeech.JPG" width="300" height="80">
-</p>
-<p style="text-align: center;">Data can exist in any form: text, audio, video, and images</p>
+
+![Data can exist in any form: text, audio, video, and images](D:\Sadoghi\HomePage\Course\PatternRecognition\Introduction\IntroductionImages\TextVideoImageSpeech.JPG)
+
+Data can exist in any form: text, audio, video, and images
 
 ## Feature Extraction
 Sensor datasets often contain diverse information collected from various types of sensors.Feature extraction transforms raw sensor data into representative features for analysis, improving data interpretation and prepare for machine learning algorithm.
 _For example_, in the following figure, the activity signal introduced in the above section is converted into a feature vector including mean, variance, skewness, and other features.
-<p style="text-align: center;">
-    <img src="Activity_Feature.jpg" width="300" height="200">
-</p>
-<p style="text-align: center;">Activity signal converted into a feature vector (mean, variance, skewness, etc.)</p>
+
+![Activity signal converted into a feature vector (mean, variance, skewness, etc.](D:\Sadoghi\HomePage\Course\PatternRecognition\Introduction\IntroductionImages\Activity_Feature.jpg)
+
+Activity signal converted into a feature vector (mean, variance, skewness, etc.
 
 ### Some Examples of Feature extraction
+
 #### Feature Extraction from Text: 
 Feature extraction from text involves converting text data into numerical representations that can be used for machine learning models. One common method is using the Term Frequency-Inverse Document Frequency (TF-IDF) approach.
 
@@ -95,30 +94,21 @@ $$
 \text{TF}(t,d) = \frac{\text{Number of times term } t \text{ appears in document } d}{\text{Total number of terms in document } d}\
 $$
 
-<div align="center"><img style="background: white;" src="dMXrkG3hO4.svg"></div>  
-
-
 #### Inverse Document Frequency (IDF)
+
 The inverse document frequency IDF(t,D)  measures how important a term is across the entire corpus D .
 
 $$
 \text{IDF}(t,D) = \log \left( \frac{N}{|\{d \in D : t \in d\}|} \right)
 $$
-
-<div align="center"><img style="background: white;" src="Rh4ylSBoCs.svg"></div>
-
 Where:
 -  N is the total number of documents in the corpus. Denumerator is the number of documents where the term  t appears (i.e., the document frequency of the term).
 
 #### TF-IDF Score
 The TF-IDF score for a term  t  in a document d is the product of its TF and IDF values.
-
-<!-- $$\[
+$$
 \text{TF-IDF}(t,d,D) = \text{TF}(t,d) \times \text{IDF}(t,D)
-\]$$ --> 
-
-<div align="center"><img style="background: white;" src="naE5cCrJaN.svg"></div>
-
+$$
 This formula adjusts the term frequency of a word by how rarely it appears in the entire corpus, emphasizing words that are more unique to specific documents.
 
 #### Python code 
