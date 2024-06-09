@@ -2,7 +2,7 @@
 # Introduction to Pattern Recognition
 ### Author : [Hadi Sadoghi Yazdi](https://scholar.google.com/citations?user=Z3XAKb0AAAAJ&hl=en)
 
-![Dedicated to those who have devoted themselves to guiding humanitye](D:\Sadoghi\HomePage\Course\PatternRecognition\Introduction\IntroductionImages\Cheetah.jpg)
+![Dedicated to those who have devoted themselves to guiding humanitye](IntroductionImages/Cheetah.jpg)
 
 Dedicated to those who have devoted themselves to guiding humanity
 
@@ -12,7 +12,7 @@ The book "Pattern Recognition" covers four main topics: clustering, classificati
 ### Lesson 1: Introduction and Overview
  Nowadays, every individual is accompanied by a set of sensors that continuously collect various types of data. Additionally, people themselves contribute to the data pool by uploading photos, videos, and text. Smart watches and mobile phones, which many people carry, are equipped with an array of sensors including gyroscopes, accelerometers, three-axis magnetometers (x, y, z), and force sensors, which are common in most smart watches. The diagram below, along with an image of a smartwatch, illustrates the sensors and their structure within the watch. Some smartwatches even provide sensors for electrocardiogram and blood oxygen levels.
 
-![The internal structure of the smart watch](D:\Sadoghi\HomePage\Course\PatternRecognition\Introduction\IntroductionImages\SmartWatch.JPG)
+![The internal structure of the smart watch](IntroductionImages\SmartWatch.JPG)
 
 The internal structure of the smart watch
 
@@ -56,7 +56,7 @@ Sensor datasets, recorded by various sensors detecting environmental changes, ar
 *GPS Sensors*: Provide location data.
 **_Data is not only collected from temperature sensors, but also from other types of sensors that gather information such as text, video, audio, and various environmental parameters._**
 
-![Data can exist in any form: text, audio, video, and images](D:\Sadoghi\HomePage\Course\PatternRecognition\Introduction\IntroductionImages\TextVideoImageSpeech.JPG)
+![Data can exist in any form: text, audio, video, and images](IntroductionImages\TextVideoImageSpeech.JPG)
 
 Data can exist in any form: text, audio, video, and images
 
@@ -64,7 +64,7 @@ Data can exist in any form: text, audio, video, and images
 Sensor datasets often contain diverse information collected from various types of sensors.Feature extraction transforms raw sensor data into representative features for analysis, improving data interpretation and prepare for machine learning algorithm.
 _For example_, in the following figure, the activity signal introduced in the above section is converted into a feature vector including mean, variance, skewness, and other features.
 
-![Activity signal converted into a feature vector (mean, variance, skewness, etc.](D:\Sadoghi\HomePage\Course\PatternRecognition\Introduction\IntroductionImages\Activity_Feature.jpg)
+![Activity signal converted into a feature vector (mean, variance, skewness, etc.](IntroductionImages\Activity_Feature.jpg)
 
 Activity signal converted into a feature vector (mean, variance, skewness, etc.
 
