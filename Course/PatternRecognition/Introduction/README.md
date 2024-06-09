@@ -101,14 +101,17 @@ The inverse document frequency IDF(t,D)  measures how important a term is across
 $$
 \text{IDF}(t,D) = \log \left( \frac{N}{|\{d \in D : t \in d\}|} \right)
 $$
+
 Where:
 -  N is the total number of documents in the corpus. Denumerator is the number of documents where the term  t appears (i.e., the document frequency of the term).
 
 #### TF-IDF Score
 The TF-IDF score for a term  t  in a document d is the product of its TF and IDF values.
+
 $$
 \text{TF-IDF}(t,d,D) = \text{TF}(t,d) \times \text{IDF}(t,D)
 $$
+
 This formula adjusts the term frequency of a word by how rarely it appears in the entire corpus, emphasizing words that are more unique to specific documents.
 
 #### Python code 
