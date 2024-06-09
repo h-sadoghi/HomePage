@@ -279,7 +279,7 @@ ax[1].set_title('HOG Features')
 plt.show()
 ```
 
-![HOG Feature](D:\Sadoghi\HomePage\Course\PatternRecognition\Introduction\IntroductionImages\HOG_Image.JPG)
+![HOG Feature](IntroductionImages/HOG_Image.JPG)
 
 This code loads an example image, converts it to grayscale, and extracts HOG features. It then displays the original image alongside the HOG features
 
@@ -298,7 +298,7 @@ hist_normalized = hist / hist.sum()
 
 The following figure shows the normalized histogram for the image 'cheetah.jpg'.
 
-![Histogram of Image](D:\Sadoghi\HomePage\Course\PatternRecognition\Introduction\IntroductionImages\Histogram_Feature.JPG)
+![Histogram of Image](IntroductionImages/Histogram_Feature.JPG)
 
 Interpreting the histogram can provide insights into the image's composition. Peaks in the histogram correspond to intensity values that occur frequently. In an image with a distinct target (like the cheetah) and background, the histogram might show two or more peaks. One peak could represent the intensity values of the target (cheetah), while another could represent the background (e.g., grass, sky). By analyzing these peaks, we can distinguish between different regions of the image. 
 
@@ -318,4 +318,4 @@ image_with_corners[corners_dilated > 0.01 * corners_dilated.max()] = [255, 0, 0]
 
 Output is:
 
-![Corner](D:\Sadoghi\HomePage\Course\PatternRecognition\Introduction\IntroductionImages\CornerFaeture.JPG)
+![Corner](IntroductionImages/CornerFaeture.JPG)
